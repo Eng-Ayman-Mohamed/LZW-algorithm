@@ -4,10 +4,15 @@ Implementation of LZW Compression and decompression in java.
 
 # How to run
 
-> `javac LZWEncoder.java  `
-
-> `javac LZWDecoder.java  `
-
-> `Java LZWEncoder filename.txt bitLength  `
-
-> `java LZWDecoder filename.lzw bitLength File-format`
+```bash
+  javac LZWEncoder.java 
+```
+```bash
+  javac LZWDecoder.java 
+```
+```bash
+  Java LZWEncoder filename.txt bitLength 
+```
+```bash
+  java LZWDecoder filename.lzw bitLength File-format
+```
