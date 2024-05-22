@@ -5,9 +5,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String inputFilePath = "a";
-        String fileExtension = "txt";
-        int numBytes = 2;
+        if (args.length < 3) {
+            System.out.println("An argument is missed ");
+            System.out.println("ex : java Main input txt 2");
+            return;
+        }
+        String inputFilePath = args[0];
+        String fileExtension = args[1];
+        int numBytes = Integer.parseInt(args[2]);
         String compressedFilePath = inputFilePath + "_compressed" + ".LZW";
         String decompressedFilePath = inputFilePath + "_decompressed";
 
@@ -25,10 +30,12 @@ public class Main {
             System.out.println("compression time: " + duration + " ms");
 
             // Write compressed data to file
+            System.out.println("Writing Compressed Data To File ... ");
             LZWFileHandler.writeCompressedDataToFile(compressedData, compressedFilePath, numBytes);
             System.out.println("Compressed data saved to: " + compressedFilePath);
 
             // Read compressed data from file
+            System.out.println("Reading Compressed Data from File ... ");
             List<Integer> readCompressedData = LZWFileHandler.readCompressedDataFromFile(compressedFilePath, numBytes);
 
             // Decompress
