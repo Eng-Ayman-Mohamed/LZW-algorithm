@@ -13,8 +13,8 @@ public class Main {
         String inputFilePath = args[0];
         String fileExtension = args[1];
         int numBytes = Integer.parseInt(args[2]);
-        String compressedFilePath = inputFilePath + "_compressed" + ".LZW";
-        String decompressedFilePath = inputFilePath + "_decompressed";
+        String compressedFilePath = inputFilePath + "-" + numBytes + "_compressed" + ".LZW";
+        String decompressedFilePath = inputFilePath + "-" + numBytes + "_decompressed";
 
         try {
             // Read image file into byte array
